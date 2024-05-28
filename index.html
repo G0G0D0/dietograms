@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diet Plan Generator</h1>
+        <div class="button-container">
+            <button id="sedentary">Sedentary</button>
+            <button id="active">Active</button>
+        </div>
+
+        <div id="form-container" class="hidden">
+            <form id="diet-form">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" required>
+
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="meals">Number of Meals:</label>
+                <select id="meals" required>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </form>
+        </div>
+
+        <div id="meal-options" class="hidden">
+            <div id="north-indian" class="hidden">
+                <h2>Select Your Meals</h2>
+                <h3>North Indian</h3>
+                <label for="north-breakfast-select">Breakfast:</label>
+                <select id="north-breakfast-select" class="meal-select"></select>
+                <label for="north-snack1-select" class="hidden">Snack 1:</label>
+                <select id="north-snack1-select" class="meal-select hidden"></select>
+                <label for="north-lunch-select">Lunch:</label>
+                <select id="north-lunch-select" class="meal-select"></select>
+                <label for="north-snack2-select" class="hidden">Snack 2:</label>
+                <select id="north-snack2-select" class="meal-select hidden"></select>
+                <label for="north-dinner-select">Dinner:</label>
+                <select id="north-dinner-select" class="meal-select"></select>
+            </div>
+
+            <div id="south-indian" class="hidden">
+                <h3>South Indian</h3>
+                <label for="south-breakfast-select">Breakfast:</label>
+                <select id="south-breakfast-select" class="meal-select"></select>
+                <label for="south-snack1-select" class="hidden">Snack 1:</label>
+                <select id="south-snack1-select" class="meal-select hidden"></select>
+                <label for="south-lunch-select">Lunch:</label>
+                <select id="south-lunch-select" class="meal-select"></select>
+                <label for="south-snack2-select" class="hidden">Snack 2:</label>
+                <select id="south-snack2-select" class="meal-select hidden"></select>
+                <label for="south-dinner-select">Dinner:</label>
+                <select id="south-dinner-select" class="meal-select"></select>
+            </div>
+
+            <div id="active-meals" class="hidden">
+                <h3>Active</h3>
+                <label for="active-breakfast-select">Breakfast:</label>
+                <select id="active-breakfast-select" class="meal-select"></select>
+                <label for="active-snack1-select" class="hidden">Snack 1:</label>
+                <select id="active-snack1-select" class="meal-select hidden"></select>
+                <label for="active-lunch-select">Lunch:</label>
+                <select id="active-lunch-select" class="meal-select"></select>
+                <label for="active-snack2-select" class="hidden">Snack 2:</label>
+                <select id="active-snack2-select" class="meal-select hidden"></select>
+                <label for="active-dinner-select">Dinner:</label>
+                <select id="active-dinner-select" class="meal-select"></select>
+            </div>
+
+            <button type="button" id="generate-plan">Generate Plan</button>
+        </div>
+
+        <div id="loading-page" class="hidden">
+            <h2>Your diet plan is coming in <span id="countdown">5</span> seconds...</h2>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <div id="diet-plan" class="hidden">
+            <h2>Diet Plan</h2>
+            <div id="diet-plan-details"></div>
+            <button id="download-plan">Download Plan</button>
+            <div id="explore-more" class="hidden">
+                <h3>Wanna explore more?</h3>
+                <button id="explore-2000">2000 kcal</button>
+                <button id="explore-2500">2500 kcal</button>
+                <button id="explore-3000">3000 kcal</button>
+                <button id="explore-3500">3500 kcal</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="ad-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Like it? Need a super customised diet plan tailored to your needs?</h3>
+            <a href="https://forms.gle/UGUWYe3HeTysR9gX7" target="_blank" id="learn-more">Learn More</a>
+            <button id="download-free-plan">Download Free Plan</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diet Plan Generator</h1>
+        <button id="sedentary">Sedentary</button>
+        <button id="active">Active</button>
+
+        <div id="form-container" class="hidden">
+            <form id="diet-form">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" required>
+
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="meals">Number of Meals:</label>
+                <select id="meals" required>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </form>
+        </div>
+
+        <div id="meal-options" class="hidden">
+            <div id="north-indian" class="hidden">
+                <h2>Select Your Meals</h2>
+                <h3>North Indian</h3>
+                <label for="north-breakfast-select">Breakfast:</label>
+                <select id="north-breakfast-select" class="meal-select"></select>
+                <label for="north-snack1-select" class="hidden">Snack 1:</label>
+                <select id="north-snack1-select" class="meal-select hidden"></select>
+                <label for="north-lunch-select">Lunch:</label>
+                <select id="north-lunch-select" class="meal-select"></select>
+                <label for="north-snack2-select" class="hidden">Snack 2:</label>
+                <select id="north-snack2-select" class="meal-select hidden"></select>
+                <label for="north-dinner-select">Dinner:</label>
+                <select id="north-dinner-select" class="meal-select"></select>
+            </div>
+
+            <div id="south-indian" class="hidden">
+                <h3>South Indian</h3>
+                <label for="south-breakfast-select">Breakfast:</label>
+                <select id="south-breakfast-select" class="meal-select"></select>
+                <label for="south-snack1-select" class="hidden">Snack 1:</label>
+                <select id="south-snack1-select" class="meal-select hidden"></select>
+                <label for="south-lunch-select">Lunch:</label>
+                <select id="south-lunch-select" class="meal-select"></select>
+                <label for="south-snack2-select" class="hidden">Snack 2:</label>
+                <select id="south-snack2-select" class="meal-select hidden"></select>
+                <label for="south-dinner-select">Dinner:</label>
+                <select id="south-dinner-select" class="meal-select"></select>
+            </div>
+
+            <div id="active-meals" class="hidden">
+                <h3>Active</h3>
+                <label for="active-breakfast-select">Breakfast:</label>
+                <select id="active-breakfast-select" class="meal-select"></select>
+                <label for="active-snack1-select" class="hidden">Snack 1:</label>
+                <select id="active-snack1-select" class="meal-select hidden"></select>
+                <label for="active-lunch-select">Lunch:</label>
+                <select id="active-lunch-select" class="meal-select"></select>
+                <label for="active-snack2-select" class="hidden">Snack 2:</label>
+                <select id="active-snack2-select" class="meal-select hidden"></select>
+                <label for="active-dinner-select">Dinner:</label>
+                <select id="active-dinner-select" class="meal-select"></select>
+            </div>
+
+            <button type="button" id="generate-plan">Generate Plan</button>
+        </div>
+
+        <div id="loading-page" class="hidden">
+            <h2>Your diet plan is coming in <span id="countdown">5</span> seconds...</h2>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <div id="diet-plan" class="hidden">
+            <h2>Diet Plan</h2>
+            <div id="diet-plan-details"></div>
+            <button id="download-plan">Download Plan</button>
+            <div id="explore-more" class="hidden">
+                <h3>Wanna explore more?</h3>
+                <button id="explore-2000">2000 kcal</button>
+                <button id="explore-2500">2500 kcal</button>
+                <button id="explore-3000">3000 kcal</button>
+                <button id="explore-3500">3500 kcal</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diet Plan Generator</h1>
+        <button id="sedentary">Sedentary</button>
+        <button id="active">Active</button>
+
+        <div id="form-container" class="hidden">
+            <form id="diet-form">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" required>
+
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="meals">Number of Meals:</label>
+                <select id="meals" required>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </form>
+        </div>
+
+        <div id="meal-options" class="hidden">
+            <div id="north-indian" class="hidden">
+                <h2>Select Your Meals</h2>
+                <h3>North Indian</h3>
+                <label for="north-breakfast-select">Breakfast:</label>
+                <select id="north-breakfast-select" class="meal-select"></select>
+                <label for="north-snack1-select" class="hidden">Snack 1:</label>
+                <select id="north-snack1-select" class="meal-select hidden"></select>
+                <label for="north-lunch-select">Lunch:</label>
+                <select id="north-lunch-select" class="meal-select"></select>
+                <label for="north-snack2-select" class="hidden">Snack 2:</label>
+                <select id="north-snack2-select" class="meal-select hidden"></select>
+                <label for="north-dinner-select">Dinner:</label>
+                <select id="north-dinner-select" class="meal-select"></select>
+            </div>
+
+            <div id="south-indian" class="hidden">
+                <h3>South Indian</h3>
+                <label for="south-breakfast-select">Breakfast:</label>
+                <select id="south-breakfast-select" class="meal-select"></select>
+                <label for="south-snack1-select" class="hidden">Snack 1:</label>
+                <select id="south-snack1-select" class="meal-select hidden"></select>
+                <label for="south-lunch-select">Lunch:</label>
+                <select id="south-lunch-select" class="meal-select"></select>
+                <label for="south-snack2-select" class="hidden">Snack 2:</label>
+                <select id="south-snack2-select" class="meal-select hidden"></select>
+                <label for="south-dinner-select">Dinner:</label>
+                <select id="south-dinner-select" class="meal-select"></select>
+            </div>
+
+            <div id="active-meals" class="hidden">
+                <h3>Active</h3>
+                <label for="active-breakfast-select">Breakfast:</label>
+                <select id="active-breakfast-select" class="meal-select"></select>
+                <label for="active-snack1-select" class="hidden">Snack 1:</label>
+                <select id="active-snack1-select" class="meal-select hidden"></select>
+                <label for="active-lunch-select">Lunch:</label>
+                <select id="active-lunch-select" class="meal-select"></select>
+                <label for="active-snack2-select" class="hidden">Snack 2:</label>
+                <select id="active-snack2-select" class="meal-select hidden"></select>
+                <label for="active-dinner-select">Dinner:</label>
+                <select id="active-dinner-select" class="meal-select"></select>
+            </div>
+
+            <button type="button" id="generate-plan">Generate Plan</button>
+        </div>
+
+        <div id="loading-page" class="hidden">
+            <h2>Your diet plan is coming in <span id="countdown">5</span> seconds...</h2>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <div id="diet-plan" class="hidden">
+            <h2>Diet Plan</h2>
+            <div id="diet-plan-details"></div>
+            <button id="download-plan">Download Plan</button>
+            <div id="explore-more" class="hidden">
+                <h3>Wanna explore more?</h3>
+                <button id="explore-2000">2000 kcal</button>
+                <button id="explore-2500">2500 kcal</button>
+                <button id="explore-3000">3000 kcal</button>
+                <button id="explore-3500">3500 kcal</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+ -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diet Plan Generator</h1>
+        <button id="sedentary">Sedentary</button>
+        <button id="active">Active</button>
+
+        <div id="form-container" class="hidden">
+            <form id="diet-form">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" required>
+
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="meals">Number of Meals:</label>
+                <select id="meals" required>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </form>
+        </div>
+
+        <div id="meal-options" class="hidden">
+            <div id="north-indian" class="hidden">
+                <h2>Select Your Meals</h2>
+                <h3>North Indian</h3>
+                <label for="north-breakfast-select">Breakfast:</label>
+                <select id="north-breakfast-select" class="meal-select"></select>
+                <label for="north-snack1-select" class="hidden">Snack 1:</label>
+                <select id="north-snack1-select" class="meal-select hidden"></select>
+                <label for="north-lunch-select">Lunch:</label>
+                <select id="north-lunch-select" class="meal-select"></select>
+                <label for="north-snack2-select" class="hidden">Snack 2:</label>
+                <select id="north-snack2-select" class="meal-select hidden"></select>
+                <label for="north-dinner-select">Dinner:</label>
+                <select id="north-dinner-select" class="meal-select"></select>
+            </div>
+
+            <div id="south-indian" class="hidden">
+                <h3>South Indian</h3>
+                <label for="south-breakfast-select">Breakfast:</label>
+                <select id="south-breakfast-select" class="meal-select"></select>
+                <label for="south-snack1-select" class="hidden">Snack 1:</label>
+                <select id="south-snack1-select" class="meal-select hidden"></select>
+                <label for="south-lunch-select">Lunch:</label>
+                <select id="south-lunch-select" class="meal-select"></select>
+                <label for="south-snack2-select" class="hidden">Snack 2:</label>
+                <select id="south-snack2-select" class="meal-select hidden"></select>
+                <label for="south-dinner-select">Dinner:</label>
+                <select id="south-dinner-select" class="meal-select"></select>
+            </div>
+
+            <div id="active-meals" class="hidden">
+                <h3>Active</h3>
+                <label for="active-breakfast-select">Breakfast:</label>
+                <select id="active-breakfast-select" class="meal-select"></select>
+                <label for="active-snack1-select" class="hidden">Snack 1:</label>
+                <select id="active-snack1-select" class="meal-select hidden"></select>
+                <label for="active-lunch-select">Lunch:</label>
+                <select id="active-lunch-select" class="meal-select"></select>
+                <label for="active-snack2-select" class="hidden">Snack 2:</label>
+                <select id="active-snack2-select" class="meal-select hidden"></select>
+                <label for="active-dinner-select">Dinner:</label>
+                <select id="active-dinner-select" class="meal-select"></select>
+            </div>
+
+            <button type="button" id="generate-plan">Generate Plan</button>
+        </div>
+
+        <div id="loading-page" class="hidden">
+            <h2>Your diet plan is coming in <span id="countdown">5</span> seconds...</h2>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <div id="diet-plan" class="hidden">
+            <h2>Diet Plan</h2>
+            <div id="diet-plan-details"></div>
+            <button id="download-plan">Download Plan</button>
+            <div id="explore-more" class="hidden">
+                <h3>Wanna explore more?</h3>
+                <button id="explore-2000">2000 kcal</button>
+                <button id="explore-2500">2500 kcal</button>
+                <button id="explore-3000">3000 kcal</button>
+                <button id="explore-3500">3500 kcal</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diet Plan Generator</h1>
+        <button id="sedentary">Sedentary</button>
+        <button id="active">Active</button>
+
+        <div id="form-container" class="hidden">
+            <form id="diet-form">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" required>
+
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="meals">Number of Meals:</label>
+                <select id="meals" required>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </form>
+        </div>
+
+        <div id="meal-options" class="hidden">
+            <div id="north-indian" class="hidden">
+                <h2>Select Your Meals</h2>
+                <h3>North Indian</h3>
+                <label for="north-breakfast-select">Breakfast:</label>
+                <select id="north-breakfast-select" class="meal-select"></select>
+                <label for="north-snack1-select" class="hidden">Snack 1:</label>
+                <select id="north-snack1-select" class="meal-select hidden"></select>
+                <label for="north-lunch-select">Lunch:</label>
+                <select id="north-lunch-select" class="meal-select"></select>
+                <label for="north-snack2-select" class="hidden">Snack 2:</label>
+                <select id="north-snack2-select" class="meal-select hidden"></select>
+                <label for="north-dinner-select">Dinner:</label>
+                <select id="north-dinner-select" class="meal-select"></select>
+            </div>
+
+            <div id="south-indian" class="hidden">
+                <h3>South Indian</h3>
+                <label for="south-breakfast-select">Breakfast:</label>
+                <select id="south-breakfast-select" class="meal-select"></select>
+                <label for="south-snack1-select" class="hidden">Snack 1:</label>
+                <select id="south-snack1-select" class="meal-select hidden"></select>
+                <label for="south-lunch-select">Lunch:</label>
+                <select id="south-lunch-select" class="meal-select"></select>
+                <label for="south-snack2-select" class="hidden">Snack 2:</label>
+                <select id="south-snack2-select" class="meal-select hidden"></select>
+                <label for="south-dinner-select">Dinner:</label>
+                <select id="south-dinner-select" class="meal-select"></select>
+            </div>
+
+            <div id="active-meals" class="hidden">
+                <h3>Active</h3>
+                <label for="active-breakfast-select">Breakfast:</label>
+                <select id="active-breakfast-select" class="meal-select"></select>
+                <label for="active-snack1-select" class="hidden">Snack 1:</label>
+                <select id="active-snack1-select" class="meal-select hidden"></select>
+                <label for="active-lunch-select">Lunch:</label>
+                <select id="active-lunch-select" class="meal-select"></select>
+                <label for="active-snack2-select" class="hidden">Snack 2:</label>
+                <select id="active-snack2-select" class="meal-select hidden"></select>
+                <label for="active-dinner-select">Dinner:</label>
+                <select id="active-dinner-select" class="meal-select"></select>
+            </div>
+
+            <button type="submit" id="generate-plan">Generate Plan</button>
+        </div>
+
+        <div id="diet-plan" class="hidden">
+            <h2>Diet Plan</h2>
+            <div id="diet-plan-details"></div>
+            <div id="explore-more" class="hidden">
+                <h3>Wanna explore more?</h3>
+                <button id="explore-2000">2000 kcal</button>
+                <button id="explore-2500">2500 kcal</button>
+                <button id="explore-3000">3000 kcal</button>
+                <button id="explore-3500">3500 kcal</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diet Plan Generator</h1>
+        <button id="sedentary">Sedentary</button>
+        <button id="active">Active</button>
+
+        <div id="form-container" class="hidden">
+            <form id="diet-form">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" required>
+
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="meals">Number of Meals:</label>
+                <select id="meals" required>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <button type="submit">Generate Plan</button>
+            </form>
+        </div>
+
+        <div id="meal-options" class="hidden">
+            <div id="north-indian" class="hidden">
+                <h2>Select Your Meals</h2>
+                <h3>North Indian</h3>
+                <label for="north-breakfast-select">Breakfast:</label>
+                <select id="north-breakfast-select" class="meal-select"></select>
+                <label for="north-snack1-select" class="hidden">Snack 1:</label>
+                <select id="north-snack1-select" class="meal-select hidden"></select>
+                <label for="north-lunch-select">Lunch:</label>
+                <select id="north-lunch-select" class="meal-select"></select>
+                <label for="north-snack2-select" class="hidden">Snack 2:</label>
+                <select id="north-snack2-select" class="meal-select hidden"></select>
+                <label for="north-dinner-select">Dinner:</label>
+                <select id="north-dinner-select" class="meal-select"></select>
+            </div>
+
+            <div id="south-indian" class="hidden">
+                <h3>South Indian</h3>
+                <label for="south-breakfast-select">Breakfast:</label>
+                <select id="south-breakfast-select" class="meal-select"></select>
+                <label for="south-snack1-select" class="hidden">Snack 1:</label>
+                <select id="south-snack1-select" class="meal-select hidden"></select>
+                <label for="south-lunch-select">Lunch:</label>
+                <select id="south-lunch-select" class="meal-select"></select>
+                <label for="south-snack2-select" class="hidden">Snack 2:</label>
+                <select id="south-snack2-select" class="meal-select hidden"></select>
+                <label for="south-dinner-select">Dinner:</label>
+                <select id="south-dinner-select" class="meal-select"></select>
+            </div>
+
+            <div id="active-meals" class="hidden">
+                <h3>Active</h3>
+                <label for="active-breakfast-select">Breakfast:</label>
+                <select id="active-breakfast-select" class="meal-select"></select>
+                <label for="active-snack1-select" class="hidden">Snack 1:</label>
+                <select id="active-snack1-select" class="meal-select hidden"></select>
+                <label for="active-lunch-select">Lunch:</label>
+                <select id="active-lunch-select" class="meal-select"></select>
+                <label for="active-snack2-select" class="hidden">Snack 2:</label>
+                <select id="active-snack2-select" class="meal-select hidden"></select>
+                <label for="active-dinner-select">Dinner:</label>
+                <select id="active-dinner-select" class="meal-select"></select>
+            </div>
+
+
+        </div>
+
+        <div id="diet-plan" class="hidden">
+            <h2>Diet Plan</h2>
+            <div id="diet-plan-details"></div>
+            <div id="explore-more" class="hidden">
+                <h3>Wanna explore more?</h3>
+                <button id="explore-2000">2000 kcal</button>
+                <button id="explore-2500">2500 kcal</button>
+                <button id="explore-3000">3000 kcal</button>
+                <button id="explore-3500">3500 kcal</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diet Plan Generator</h1>
+        <div class="button-container">
+            <button id="sedentary">Sedentary</button>
+            <button id="active">Active</button>
+        </div>
+
+        <div id="form-container" class="hidden">
+            <form id="diet-form">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" required>
+                <br>
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" required>
+                <br>
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <br>
+                <label for="meals">Number of Meals:</label>
+                <select id="meals" name="meals" required>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <br>
+                <div id="north-indian" class="hidden">
+                    <label for="north-breakfast-select">North Indian Breakfast:</label>
+                    <select id="north-breakfast-select" class="meal-select"></select>
+                    <br>
+                    <label for="north-snack1-select" class="hidden">North Indian Snack1:</label>
+                    <select id="north-snack1-select" class="meal-select hidden"></select>
+                    <br>
+                    <label for="north-lunch-select">North Indian Lunch:</label>
+                    <select id="north-lunch-select" class="meal-select"></select>
+                    <br>
+                    <label for="north-snack2-select" class="hidden">North Indian Snack2:</label>
+                    <select id="north-snack2-select" class="meal-select hidden"></select>
+                    <br>
+                    <label for="north-dinner-select">North Indian Dinner:</label>
+                    <select id="north-dinner-select" class="meal-select"></select>
+                </div>
+                <br>
+                <div id="south-indian" class="hidden">
+                    <label for="south-breakfast-select">South Indian Breakfast:</label>
+                    <select id="south-breakfast-select" class="meal-select"></select>
+                    <br>
+                    <label for="south-snack1-select" class="hidden">South Indian Snack1:</label>
+                    <select id="south-snack1-select" class="meal-select hidden"></select>
+                    <br>
+                    <label for="south-lunch-select">South Indian Lunch:</label>
+                    <select id="south-lunch-select" class="meal-select"></select>
+                    <br>
+                    <label for="south-snack2-select" class="hidden">South Indian Snack2:</label>
+                    <select id="south-snack2-select" class="meal-select hidden"></select>
+                    <br>
+                    <label for="south-dinner-select">South Indian Dinner:</label>
+                    <select id="south-dinner-select" class="meal-select"></select>
+                </div>
+                <div id="active-meals" class="hidden">
+                    <label for="active-breakfast-select">Active Breakfast:</label>
+                    <select id="active-breakfast-select" class="meal-select"></select>
+                    <br>
+                    <label for="active-snack1-select" class="hidden">Active Snack1:</label>
+                    <select id="active-snack1-select" class="meal-select hidden"></select>
+                    <br>
+                    <label for="active-lunch-select">Active Lunch:</label>
+                    <select id="active-lunch-select" class="meal-select"></select>
+                    <br>
+                    <label for="active-snack2-select" class="hidden">Active Snack2:</label>
+                    <select id="active-snack2-select" class="meal-select hidden"></select>
+                    <br>
+                    <label for="active-dinner-select">Active Dinner:</label>
+                    <select id="active-dinner-select" class="meal-select"></select>
+                </div>
+                <br>
+                <button type="submit">Generate Diet Plan</button>
+            </form>
+        </div>
+
+        <div id="diet-plan" class="hidden">
+            <h2>Diet Plan</h2>
+            <div id="diet-plan-details"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Diet Plan Generator</h1>
+    <button id="sedentary">Sedentary</button>
+    <button id="active">Active</button>
+
+    <div id="form-container" class="hidden">
+        <form id="diet-form">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" required>
+            <br>
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" required>
+            <br>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <br>
+            <label for="meals">Number of Meals:</label>
+            <select id="meals" name="meals" required>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <br>
+            <div id="north-indian" class="hidden">
+                <label for="north-breakfast-select">North Indian Breakfast:</label>
+                <select id="north-breakfast-select" class="meal-select"></select>
+                <br>
+                <label for="north-snack1-select" class="hidden">North Indian Snack1:</label>
+                <select id="north-snack1-select" class="meal-select hidden"></select>
+                <br>
+                <label for="north-lunch-select">North Indian Lunch:</label>
+                <select id="north-lunch-select" class="meal-select"></select>
+                <br>
+                <label for="north-snack2-select" class="hidden">North Indian Snack2:</label>
+                <select id="north-snack2-select" class="meal-select hidden"></select>
+                <br>
+                <label for="north-dinner-select">North Indian Dinner:</label>
+                <select id="north-dinner-select" class="meal-select"></select>
+            </div>
+            <div id="south-indian" class="hidden">
+                <label for="south-breakfast-select">South Indian Breakfast:</label>
+                <select id="south-breakfast-select" class="meal-select"></select>
+                <br>
+                <label for="south-snack1-select" class="hidden">South Indian Snack1:</label>
+                <select id="south-snack1-select" class="meal-select hidden"></select>
+                <br>
+                <label for="south-lunch-select">South Indian Lunch:</label>
+                <select id="south-lunch-select" class="meal-select"></select>
+                <br>
+                <label for="south-snack2-select" class="hidden">South Indian Snack2:</label>
+                <select id="south-snack2-select" class="meal-select hidden"></select>
+                <br>
+                <label for="south-dinner-select">South Indian Dinner:</label>
+                <select id="south-dinner-select" class="meal-select"></select>
+            </div>
+            <div id="active-meals" class="hidden">
+                <label for="active-breakfast-select">Active Breakfast:</label>
+                <select id="active-breakfast-select" class="meal-select"></select>
+                <br>
+                <label for="active-snack1-select" class="hidden">Active Snack1:</label>
+                <select id="active-snack1-select" class="meal-select hidden"></select>
+                <br>
+                <label for="active-lunch-select">Active Lunch:</label>
+                <select id="active-lunch-select" class="meal-select"></select>
+                <br>
+                <label for="active-snack2-select" class="hidden">Active Snack2:</label>
+                <select id="active-snack2-select" class="meal-select hidden"></select>
+                <br>
+                <label for="active-dinner-select">Active Dinner:</label>
+                <select id="active-dinner-select" class="meal-select"></select>
+            </div>
+            <br>
+            <button type="submit">Generate Diet Plan</button>
+        </form>
+    </div>
+
+    <div id="diet-plan" class="hidden">
+        <h2>Diet Plan</h2>
+        <div id="diet-plan-details"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+ -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diet Plan Generator</h1>
+        <div class="category-buttons">
+            <button id="sedentary">Sedentary</button>
+            <button id="active">Active</button>
+        </div>
+        <div id="form-container" class="hidden">
+            <form id="diet-form">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" required>
+                
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" required>
+                
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="meals">Number of Meals:</label>
+                <select id="meals" name="meals" required>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <div id="meal-options" class="hidden">
+                    <h3>Select Your Meals</h3>
+                    <div id="north-indian" class="meal-category hidden">
+                        <h4>North Indian</h4>
+                        <div class="meal-section">
+                            <label for="north-breakfast-select">Breakfast:</label>
+                            <select id="north-breakfast-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="meal-section">
+                            <label for="north-lunch-select">Lunch:</label>
+                            <select id="north-lunch-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="meal-section">
+                            <label for="north-dinner-select">Dinner:</label>
+                            <select id="north-dinner-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="south-indian" class="meal-category hidden">
+                        <h4>South Indian</h4>
+                        <div class="meal-section">
+                            <label for="south-breakfast-select">Breakfast:</label>
+                            <select id="south-breakfast-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="meal-section">
+                            <label for="south-lunch-select">Lunch:</label>
+                            <select id="south-lunch-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="meal-section">
+                            <label for="south-dinner-select">Dinner:</label>
+                            <select id="south-dinner-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="active-meals" class="meal-category hidden">
+                        <h4>Active Meals</h4>
+                        <div class="meal-section">
+                            <label for="active-breakfast-select">Breakfast:</label>
+                            <select id="active-breakfast-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="meal-section">
+                            <label for="active-lunch-select">Lunch:</label>
+                            <select id="active-lunch-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="meal-section">
+                            <label for="active-dinner-select">Dinner:</label>
+                            <select id="active-dinner-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit">Generate Plan</button>
+            </form>
+        </div>
+        <div id="diet-plan" class="hidden">
+            <h2>Your Diet Plan</h2>
+            <div id="diet-plan-details"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diet Plan Generator</h1>
+        <div class="category-buttons">
+            <button id="sedentary">Sedentary</button>
+            <button id="active">Active</button>
+        </div>
+        <div id="form-container" class="hidden">
+            <form id="diet-form">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" required>
+                
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" required>
+                
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="meals">Number of Meals:</label>
+                <select id="meals" name="meals" required>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <div id="meal-options" class="hidden">
+                    <h3>Select Your Meals</h3>
+                    <div id="north-indian" class="meal-category hidden">
+                        <h4>North Indian</h4>
+                        <div class="meal-section">
+                            <label for="north-breakfast-select">Breakfast:</label>
+                            <select id="north-breakfast-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="meal-section">
+                            <label for="north-lunch-select">Lunch:</label>
+                            <select id="north-lunch-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="meal-section">
+                            <label for="north-dinner-select">Dinner:</label>
+                            <select id="north-dinner-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="south-indian" class="meal-category hidden">
+                        <h4>South Indian</h4>
+                        <div class="meal-section">
+                            <label for="south-breakfast-select">Breakfast:</label>
+                            <select id="south-breakfast-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="meal-section">
+                            <label for="south-lunch-select">Lunch:</label>
+                            <select id="south-lunch-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="meal-section">
+                            <label for="south-dinner-select">Dinner:</label>
+                            <select id="south-dinner-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="active-meals" class="meal-category hidden">
+                        <h4>Active Meals</h4>
+                        <div class="meal-section">
+                            <label for="active-breakfast-select">Breakfast:</label>
+                            <select id="active-breakfast-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="meal-section">
+                            <label for="active-lunch-select">Lunch:</label>
+                            <select id="active-lunch-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="meal-section">
+                            <label for="active-dinner-select">Dinner:</label>
+                            <select id="active-dinner-select" class="meal-select">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit">Generate Plan</button>
+            </form>
+        </div>
+        <div id="diet-plan" class="hidden">
+            <h2>Your Diet Plan</h2>
+            <div id="diet-plan-details"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> -->
