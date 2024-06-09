@@ -9,6 +9,210 @@
 <body>
     <div class="container">
         <h1>Diet Plan Generator</h1>
+        <h2>Get your general diet plan for a healthy lifestyle</h2>
+        
+        <div id="form-container">
+            <form id="diet-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" required>
+
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="meals">Number of Meals:</label>
+                <select id="meals" required>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </form>
+        </div>
+
+        <div id="meal-options" class="hidden">
+            <div id="breakfast">
+                <h3>Breakfast</h3>
+                <table class="meal-table">
+                    <tr>
+                        <td><input type="checkbox" id="option1-breakfast-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option1-breakfast-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option2-breakfast-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option2-breakfast-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option3-breakfast-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option3-breakfast-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option4-breakfast-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option4-breakfast-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option5-breakfast-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option5-breakfast-text"></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="snack1" class="hidden">
+                <h3>Snack 1</h3>
+                <table class="meal-table">
+                    <tr>
+                        <td><input type="checkbox" id="option1-snack1-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option1-snack1-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option2-snack1-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option2-snack1-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option3-snack1-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option3-snack1-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option4-snack1-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option4-snack1-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option5-snack1-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option5-snack1-text"></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="lunch">
+                <h3>Lunch</h3>
+                <table class="meal-table">
+                    <tr>
+                        <td><input type="checkbox" id="option1-lunch-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option1-lunch-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option2-lunch-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option2-lunch-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option3-lunch-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option3-lunch-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option4-lunch-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option4-lunch-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option5-lunch-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option5-lunch-text"></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="snack2" class="hidden">
+                <h3>Snack 2</h3>
+                <table class="meal-table">
+                    <tr>
+                        <td><input type="checkbox" id="option1-snack2-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option1-snack2-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option2-snack2-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option2-snack2-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option3-snack2-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option3-snack2-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option4-snack2-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option4-snack2-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option5-snack2-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option5-snack2-text"></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="dinner">
+                <h3>Dinner</h3>
+                <table class="meal-table">
+                    <tr>
+                        <td><input type="checkbox" id="option1-dinner-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option1-dinner-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option2-dinner-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option2-dinner-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option3-dinner-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option3-dinner-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option4-dinner-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option4-dinner-text"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="option5-dinner-checkbox" class="meal-checkbox"></td>
+                        <td><span id="option5-dinner-text"></span></td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" id="generate-plan">Generate Plan</button>
+        </div>
+
+        <div id="loading-page" class="hidden">
+            <h2>Your diet plan is coming in <span id="countdown">5</span> seconds...</h2>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <div id="diet-plan" class="hidden">
+            <h2 id="personalized-message"></h2>
+            <div id="diet-plan-details"></div>
+            <button id="download-plan">Download Plan</button>
+            <!-- <div id="explore-more" class="hidden">
+                <h3>Wanna explore more?</h3>
+                <button id="explore-2000">2000 kcal</button>
+                <button id="explore-2500">2500 kcal</button>
+                <button id="explore-3000">3000 kcal</button>
+                <button id="explore-3500">3500 kcal</button>
+            </div> -->
+        </div>
+    </div>
+
+    <div id="ad-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Like it? Need a super customised diet plan tailored to your needs?</h3>
+            <a href="https://forms.gle/UGUWYe3HeTysR9gX7" target="_blank" id="learn-more">Learn More</a>
+            <button id="download-free-plan">Download Free Plan</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diet Plan Generator</h1>
         <div class="button-container">
             <button id="sedentary">Sedentary</button>
             <button id="active">Active</button>
@@ -115,7 +319,7 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+</html> -->
 
 
 
