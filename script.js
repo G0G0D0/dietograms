@@ -631,7 +631,9 @@ function generatePlan(calorieOverride = null) {
 }
 
 function calculateCalories(height, weight, gender) {
-    return (10 * weight) + (6.25 * height) - (5 * 25) + (gender === 'male' ? 5 : -161);
+    // return (10 * weight) + (6.25 * height) - (5 * 25) + (gender === 'male' ? 5 : -161);
+        return(28.5 * weight);
+
 }
 
 function showAdModal() {
